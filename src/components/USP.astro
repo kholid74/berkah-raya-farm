@@ -1,0 +1,49 @@
+---
+const usps = [
+  {
+    icon: '🐔',
+    title: 'Dari Kandang, Bukan Tengkulak',
+    desc: 'Semua telur berasal dari peternakan sendiri di Purworejo. Kualitas terkontrol sejak sumber — tidak ada rantai distribusi panjang yang bikin harga naik.',
+  },
+  {
+    icon: '🧱',
+    title: 'Batu Bata Merah Asli',
+    desc: 'Bukan abu bata atau pengasinan instan. Metode tradisional turun-temurun yang bikin kuning telur pulen, gurih, dan tidak amis.',
+  },
+  {
+    icon: '⏰',
+    title: 'Panen Pagi, Kirim Siang',
+    desc: 'Telur dipanen setiap pagi. Pesanan sebelum jam 10 langsung dikirim hari yang sama — kesegaran maksimal sampai ke tangan Anda.',
+  },
+  {
+    icon: '🏷️',
+    title: 'Harga Langsung Peternak',
+    desc: 'Tanpa perantara. Anda dapat harga terbaik untuk telur asin premium. Semakin banyak pesanan, semakin hemat.',
+  },
+];
+---
+
+<section id="keunggulan" class="py-20 lg:py-28 bg-[#1A0A00]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <span class="inline-block text-[#F5C518] text-sm font-semibold tracking-widest uppercase mb-3">Kenapa Berkah Raya Farm</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white" style="font-family: 'DM Serif Display', serif;">
+        Bukan Telur Asin Biasa. Ini yang Bikin Kami Berbeda.
+      </h2>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {usps.map((usp) => (
+        <div class="bg-[#2D1200] border border-white/10 rounded-2xl p-7 hover:border-[#F5C518]/40 transition-colors duration-300 group">
+          <div class="text-4xl mb-5">{usp.icon}</div>
+          <h3 class="text-lg font-bold text-white mb-3 group-hover:text-[#F5C518] transition-colors" style="font-family: 'DM Serif Display', serif;">
+            {usp.title}
+          </h3>
+          <p class="text-white/60 text-sm leading-relaxed">{usp.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

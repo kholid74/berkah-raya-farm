@@ -1,0 +1,59 @@
+---
+const stats = [
+  {
+    number: '37',
+    label: 'Mitra Usaha Aktif',
+    sub: 'Warung, resto, katering, & reseller',
+    icon: '🤝',
+  },
+  {
+    number: '2.500+',
+    label: 'Butir per Bulan',
+    sub: 'Produksi stabil dari peternakan sendiri',
+    icon: '🥚',
+  },
+  {
+    number: '6',
+    label: 'Kota di Jabodetabek',
+    sub: 'Jakarta, Bogor, Depok, Tangerang, Tangsel, Bekasi',
+    icon: '🚚',
+  },
+  {
+    number: '7-10',
+    label: 'Hari Pengasinan',
+    sub: 'Proses tradisional batu bata merah — tidak instan',
+    icon: '🧱',
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-[#FFF8E7]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <span class="inline-block text-[#C8171D] text-sm font-semibold tracking-widest uppercase mb-3">Berkah Raya Farm dalam Angka</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#1A0A00]" style="font-family: 'DM Serif Display', serif;">
+        Dari Peternakan Kecil,<br class="sm:hidden"/> Terus Tumbuh Sampai Sekarang.
+      </h2>
+    </div>
+
+    <!-- Stats grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      {stats.map((stat) => (
+        <div class="bg-white border border-[#F0E6C8] rounded-2xl p-7 text-center hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="text-4xl mb-4">{stat.icon}</div>
+          <div class="text-4xl sm:text-5xl font-bold text-[#C8171D] mb-2" style="font-family: 'DM Serif Display', serif;">
+            {stat.number}
+          </div>
+          <div class="text-[#1A0A00] font-semibold text-sm mb-1">{stat.label}</div>
+          <div class="text-[#9A7B6A] text-xs leading-relaxed">{stat.sub}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom note -->
+    <p class="text-center text-[#9A7B6A] text-xs mt-8">
+      * Data per Juni 2025. Angka diperbarui secara berkala.
+    </p>
+  </div>
+</section>

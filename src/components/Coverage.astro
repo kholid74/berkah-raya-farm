@@ -1,0 +1,124 @@
+---
+const areas = ['Jakarta', 'Bogor', 'Depok', 'Tangerang', 'Tangerang Selatan', 'Bekasi'];
+
+const businessTypes = [
+  { icon: '🍽️', label: 'Rumah Makan' },
+  { icon: '📦', label: 'Katering' },
+  { icon: '🏪', label: 'Reseller' },
+  { icon: '🎁', label: 'Toko Oleh-Oleh' },
+  { icon: '🏨', label: 'Hotel & Horeca' },
+  { icon: '🛵', label: 'UMKM Kuliner' },
+  { icon: '🚛', label: 'Distributor' },
+  { icon: '🏠', label: 'Keluarga' },
+];
+---
+
+<section class="py-20 lg:py-28 bg-[#1A0A00]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left: content -->
+      <div>
+        <span class="inline-block text-[#F5C518] text-sm font-semibold tracking-widest uppercase mb-3">Area & Layanan</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" style="font-family: 'DM Serif Display', serif;">
+          Siap Kirim Se-Jabodetabek,<br/>Melayani Berbagai Jenis Usaha
+        </h2>
+        <p class="text-white/70 text-base mb-6">
+          Dari kebutuhan rumah tangga sampai supply rutin bisnis — kami siap jadi partner terpercaya Anda.
+        </p>
+
+        <!-- Business types -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          {businessTypes.map((bt) => (
+            <span class="inline-flex items-center gap-1.5 bg-[#2D1200] border border-white/10 text-white/70 text-xs font-medium px-3 py-1.5 rounded-full hover:border-[#F5C518]/40 hover:text-white transition-colors">
+              <span>{bt.icon}</span>
+              {bt.label}
+            </span>
+          ))}
+        </div>
+
+        <!-- Area badges -->
+        <p class="text-white/50 text-sm mb-4">Area pengiriman:</p>
+        <div class="flex flex-wrap gap-3 mb-8">
+          {areas.map((area) => (
+            <span class="inline-flex items-center gap-1.5 bg-[#2D1200] border border-[#F5C518]/30 text-[#F5C518] text-sm font-medium px-4 py-2 rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#F5C518]"></span>
+              {area}
+            </span>
+          ))}
+        </div>
+
+        <p class="text-white/50 text-sm mb-8">
+          Butuh pengiriman ke luar Jabodetabek? Hubungi kami untuk konfirmasi ketersediaan.
+        </p>
+
+        <!-- Offline store info -->
+        <div class="bg-[#2D1200] border border-white/10 rounded-xl p-5">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl mt-0.5">📍</span>
+            <div>
+              <p class="text-white font-semibold text-base mb-1">Toko Offline: Ciputat, Tangerang Selatan</p>
+              <p class="text-white/60 text-sm">Jl. Jombang Raya No 53 — Senin–Sabtu, 08.00–17.00 WIB</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: map illustration -->
+      <div class="relative">
+        <div class="bg-[#2D1200] border border-white/10 rounded-2xl p-6 aspect-square max-w-md mx-auto flex items-center justify-center">
+          <div class="w-full">
+            <p class="text-[#F5C518] text-center text-sm font-semibold mb-6 tracking-wider uppercase">Wilayah Distribusi</p>
+            <div class="relative bg-[#1A0A00] rounded-xl p-8">
+              <!-- Simplified map SVG -->
+              <svg viewBox="0 0 300 280" class="w-full opacity-80" aria-hidden="true">
+                <rect width="300" height="280" fill="#1A0A00" rx="12"/>
+
+                <!-- Jakarta (center-left) -->
+                <circle cx="110" cy="120" r="28" fill="#C8171D" opacity="0.25"/>
+                <circle cx="110" cy="120" r="10" fill="#C8171D" opacity="0.8"/>
+                <text x="110" y="160" text-anchor="middle" fill="#ffffff" font-size="11" font-family="sans-serif">Jakarta</text>
+
+                <!-- Bogor -->
+                <circle cx="135" cy="210" r="7" fill="#F5C518" opacity="0.8"/>
+                <text x="135" y="230" text-anchor="middle" fill="#F5C518" font-size="10" font-family="sans-serif">Bogor</text>
+
+                <!-- Depok -->
+                <circle cx="135" cy="170" r="7" fill="#F5C518" opacity="0.8"/>
+                <text x="135" y="190" text-anchor="middle" fill="#F5C518" font-size="10" font-family="sans-serif">Depok</text>
+
+                <!-- Tangerang -->
+                <circle cx="55" cy="120" r="8" fill="#F5C518" opacity="0.8"/>
+                <text x="55" y="140" text-anchor="middle" fill="#F5C518" font-size="9" font-family="sans-serif">Tangerang</text>
+
+                <!-- Tangerang Selatan -->
+                <circle cx="75" cy="165" r="9" fill="#F5C518" opacity="0.9"/>
+                <text x="75" y="185" text-anchor="middle" fill="#F5C518" font-size="8" font-family="sans-serif">Tangsel</text>
+
+                <!-- Store pin -->
+                <polygon points="75,145 70,155 80,155" fill="#C8171D"/>
+
+                <!-- Bekasi -->
+                <circle cx="195" cy="115" r="8" fill="#F5C518" opacity="0.8"/>
+                <text x="195" y="135" text-anchor="middle" fill="#F5C518" font-size="10" font-family="sans-serif">Bekasi</text>
+
+                <!-- Connection lines -->
+                <line x1="110" y1="120" x2="55" y2="120" stroke="#F5C518" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/>
+                <line x1="110" y1="120" x2="135" y2="170" stroke="#F5C518" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/>
+                <line x1="110" y1="120" x2="135" y2="210" stroke="#F5C518" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/>
+                <line x1="110" y1="120" x2="195" y2="115" stroke="#F5C518" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/>
+                <line x1="110" y1="120" x2="75" y2="165" stroke="#F5C518" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/>
+              </svg>
+
+              <div class="flex items-center gap-2 mt-4 justify-center">
+                <span class="w-2 h-2 rounded-full bg-[#C8171D]"></span>
+                <span class="text-white/50 text-xs">Pusat distribusi</span>
+                <span class="w-2 h-2 rounded-full bg-[#F5C518] ml-3"></span>
+                <span class="text-white/50 text-xs">Area layanan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
